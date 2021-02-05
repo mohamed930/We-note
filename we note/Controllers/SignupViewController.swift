@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class SignupViewController: UIViewController {
 
@@ -41,10 +42,16 @@ class SignupViewController: UIViewController {
         
         if (self.signupview.EmailTextField.text == "" || self.signupview.PasswordTextField.text == "") {
             // Create Alert to fill all fields.
-            
+            Tools.MakeAlert(Title: "Error", Mess: "Please Fill All Fields Before Sign up", ob: self)
         }
         else {
             // Make Signup Operation.
+            FirebaseNetworking.createAccount(Email: signupview.EmailTextField.text!, Password: signupview.PasswordTextField.text!) { (mess) in
+                if mess == "Success" {
+                    ProgressHUD.showSuccess("Your Account is created Successfully")
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
     

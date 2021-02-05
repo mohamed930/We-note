@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7467FFDED25C6B5C663D238 /* Pods_we_note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADE6031E6C9F33AB7EA93A3 /* Pods_we_note.framework */; };
 		D90F6D9E25CCA18200001686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6D9D25CCA18200001686 /* AppDelegate.swift */; };
 		D90F6DA225CCA18300001686 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DA125CCA18300001686 /* LoginViewController.swift */; };
 		D90F6DA525CCA18300001686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DA325CCA18300001686 /* Main.storyboard */; };
@@ -24,9 +25,15 @@
 		D90F6DDC25CCBCBD00001686 /* NoteMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DDB25CCBCBD00001686 /* NoteMetaDataView.swift */; };
 		D90F6DE625CCC27600001686 /* NoteCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DE425CCC27600001686 /* NoteCellTableViewCell.swift */; };
 		D90F6DE725CCC27600001686 /* NoteCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DE525CCC27600001686 /* NoteCellTableViewCell.xib */; };
+		D9C0A00325CCCEA600EFE973 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9C0A00225CCCEA600EFE973 /* GoogleService-Info.plist */; };
+		D9C0A01E25CCD06D00EFE973 /* FirebaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0A01D25CCD06D00EFE973 /* FirebaseNetworking.swift */; };
+		D9C0A03A25CCD40700EFE973 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C0A03925CCD40700EFE973 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ADE6031E6C9F33AB7EA93A3 /* Pods_we_note.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_we_note.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A8E95A69BA4EE47835DDEE /* Pods-we note.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-we note.release.xcconfig"; path = "Target Support Files/Pods-we note/Pods-we note.release.xcconfig"; sourceTree = "<group>"; };
+		D105EF0760BD173F708B2D95 /* Pods-we note.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-we note.debug.xcconfig"; path = "Target Support Files/Pods-we note/Pods-we note.debug.xcconfig"; sourceTree = "<group>"; };
 		D90F6D9A25CCA18200001686 /* we note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90F6D9D25CCA18200001686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90F6DA125CCA18300001686 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +53,9 @@
 		D90F6DDB25CCBCBD00001686 /* NoteMetaDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMetaDataView.swift; sourceTree = "<group>"; };
 		D90F6DE425CCC27600001686 /* NoteCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellTableViewCell.swift; sourceTree = "<group>"; };
 		D90F6DE525CCC27600001686 /* NoteCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellTableViewCell.xib; sourceTree = "<group>"; };
+		D9C0A00225CCCEA600EFE973 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9C0A01D25CCD06D00EFE973 /* FirebaseNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNetworking.swift; sourceTree = "<group>"; };
+		D9C0A03925CCD40700EFE973 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7467FFDED25C6B5C663D238 /* Pods_we_note.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EEB2877D4F9829C87CFB22B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D105EF0760BD173F708B2D95 /* Pods-we note.debug.xcconfig */,
+				B3A8E95A69BA4EE47835DDEE /* Pods-we note.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA52AD6158E3D3890FDF3E03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ADE6031E6C9F33AB7EA93A3 /* Pods_we_note.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D90F6D9125CCA18200001686 = {
 			isa = PBXGroup;
 			children = (
 				D90F6D9C25CCA18200001686 /* we note */,
 				D90F6D9B25CCA18200001686 /* Products */,
+				6EEB2877D4F9829C87CFB22B /* Pods */,
+				AA52AD6158E3D3890FDF3E03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				D90F6DB425CCA1D400001686 /* App Delegate */,
+				D9C0A01C25CCD03900EFE973 /* Firebase Networking */,
+				D9C0A03825CCD3F100EFE973 /* Tools */,
 				D90F6DCD25CCAE7C00001686 /* Models */,
 				D90F6DB625CCA1E000001686 /* Controllers */,
 				D90F6DB825CCA1EE00001686 /* Views */,
@@ -125,6 +157,7 @@
 		D90F6DBA25CCA1F700001686 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D9C0A00225CCCEA600EFE973 /* GoogleService-Info.plist */,
 				D90F6DA625CCA18300001686 /* Assets.xcassets */,
 				D90F6DAB25CCA18300001686 /* Info.plist */,
 			);
@@ -148,6 +181,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D9C0A01C25CCD03900EFE973 /* Firebase Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9C0A01D25CCD06D00EFE973 /* FirebaseNetworking.swift */,
+			);
+			path = "Firebase Networking";
+			sourceTree = "<group>";
+		};
+		D9C0A03825CCD3F100EFE973 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D9C0A03925CCD40700EFE973 /* Tools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D90F6DAE25CCA18300001686 /* Build configuration list for PBXNativeTarget "we note" */;
 			buildPhases = (
+				9D397AF1B67649A550DD6B48 /* [CP] Check Pods Manifest.lock */,
 				D90F6D9625CCA18200001686 /* Sources */,
 				D90F6D9725CCA18200001686 /* Frameworks */,
 				D90F6D9825CCA18200001686 /* Resources */,
+				37987C08574108D1F96A52B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,12 +258,55 @@
 			files = (
 				D90F6DAA25CCA18300001686 /* LaunchScreen.storyboard in Resources */,
 				D90F6DA725CCA18300001686 /* Assets.xcassets in Resources */,
+				D9C0A00325CCCEA600EFE973 /* GoogleService-Info.plist in Resources */,
 				D90F6DA525CCA18300001686 /* Main.storyboard in Resources */,
 				D90F6DE725CCC27600001686 /* NoteCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37987C08574108D1F96A52B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-we note/Pods-we note-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-we note/Pods-we note-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-we note/Pods-we note-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D397AF1B67649A550DD6B48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-we note-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D90F6D9625CCA18200001686 /* Sources */ = {
@@ -227,6 +321,8 @@
 				D90F6DD625CCAFBE00001686 /* NoteDescribeView.swift in Sources */,
 				D90F6DD325CCAF9400001686 /* NoteDescribeViewController.swift in Sources */,
 				D90F6DCF25CCAE8F00001686 /* Note.swift in Sources */,
+				D9C0A01E25CCD06D00EFE973 /* FirebaseNetworking.swift in Sources */,
+				D9C0A03A25CCD40700EFE973 /* Tools.swift in Sources */,
 				D90F6DC825CCAA7F00001686 /* NotesViewController.swift in Sources */,
 				D90F6DC225CCA71700001686 /* SignupViewController.swift in Sources */,
 				D90F6DD925CCBC8A00001686 /* NoteMetaDataViewController.swift in Sources */,
@@ -375,10 +471,12 @@
 		};
 		D90F6DAF25CCA18300001686 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D105EF0760BD173F708B2D95 /* Pods-we note.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X4YZSY77G5;
 				INFOPLIST_FILE = "$(SRCROOT)/we note/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,10 +492,12 @@
 		};
 		D90F6DB025CCA18300001686 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3A8E95A69BA4EE47835DDEE /* Pods-we note.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X4YZSY77G5;
 				INFOPLIST_FILE = "$(SRCROOT)/we note/Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

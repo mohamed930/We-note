@@ -42,14 +42,27 @@ class LoginViewController: UIViewController {
         
         if (self.loginview.EmailTextField.text == "" || self.loginview.PasswordTextField.text == "") {
             // Create Alert to fill all fields.
+            Tools.MakeAlert(Title: "Error", Mess: "Please Fill All Fields Before Login", ob: self)
             
         }
         else {
             // Make Login Operation.
-            let story = UIStoryboard(name: "Main", bundle: nil)
-            let next = story.instantiateViewController(withIdentifier: "NotesView") as! NotesViewController
-            next.modalPresentationStyle = .fullScreen
-            self.present(next, animated: true, completion: nil)
+            
+            FirebaseNetworking.MakeLogin(Email: loginview.EmailTextField.text! , Password: loginview.PasswordTextField.text!) { (res) in
+                
+                if res == "Success" {
+                    let story = UIStoryboard(name: "Main", bundle: nil)
+                    let next = story.instantiateViewController(withIdentifier: "NotesView") as! NotesViewController
+                    next.modalPresentationStyle = .fullScreen
+                    self.present(next, animated: true, completion: nil)
+                }
+                else {
+                    self.loginview.PasswordTextField.text = ""
+                    self.loginview.PasswordTextField.becomeFirstResponder()
+                }
+                
+            }
+            
         }
     }
     

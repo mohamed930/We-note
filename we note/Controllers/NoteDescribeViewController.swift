@@ -9,7 +9,7 @@ import UIKit
 
 // MARK:- TODO:- This Protocol For Getting New Note Title or Updated.
 protocol NewNote {
-    func NewNote (NoteTitle: String)
+    func NewNote (NoteData: Note)
 }
 
 class NoteDescribeViewController: UIViewController {
@@ -100,6 +100,23 @@ class NoteDescribeViewController: UIViewController {
     func NewNote() {
         // First Dismiss Keypad if it's Active
         self.view.endEditing(true)
+        
+        let data = [
+                    "NoteTitle": notedescribeview.NoteTitle.text!,
+                    "NoteDesc": notedescribeview.NoteDescribtion.text!,
+                    "dateCreated": "2020/05/15",
+                    "dateModify": "2020/05/15",
+                    "long": 31.51447889,
+                    "lati": 32.514778889
+                   ] as [String : Any] 
+        
+        FirebaseNetworking.addData(collectionName: "Notes", data: data) { (res) in
+            if res == "Success" {
+                //self.delegate.NewNote(NoteTitle: self.notedescribeview.NoteTitle.text!)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
     
     // MARK:- TODO:- When Touch Began in Screen

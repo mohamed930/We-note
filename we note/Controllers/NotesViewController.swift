@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import RappleProgressHUD
 
 class NotesViewController: UIViewController {
     
@@ -42,6 +44,18 @@ class NotesViewController: UIViewController {
     
     // MARK:- TODO:- Method GettingNotes For Getting the Notes.
     func GettingNotes () {
+        
+        FirebaseNetworking.readWithWhereCondtion(collectionName: "Notes", k: "UserNote", v: (Auth.auth().currentUser?.email!)!) { (snapshot) in
+            if snapshot.isEmpty {
+                // if result is empty show Mess.
+                RappleActivityIndicatorView.stopAnimation()
+                self.notesview.tableView.isHidden = true
+                self.notesview.LabelMess.isHidden = false
+            }
+            else {
+                // Load All Notes
+            }
+        }
         
     }
     
@@ -118,7 +132,14 @@ extension NotesViewController: UITableViewDataSource {
 
 // MARK:- TODO:- The Protocol To Get New Title
 extension NotesViewController: NewNote {
-    func NewNote(NoteTitle: String) {
-        print(NoteTitle)
+    func NewNote(NoteData: Note) {
+        notesview.tableView.isHidden = false
+        notesview.LabelMess.isHidden = true
+        
+        //let ob = Note()
+        //ob.NoteTitle = NoteTitle
+        
+        self.NotesArr.append(NoteData)
+        notesview.tableView.reloadData()
     }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="72" id="KGk-i7-Jjw" customClass="NoteCellTableViewCell" customModule="we_note" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="442" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-21-KI2">
+                        <rect key="frame" x="20" y="21" width="402" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="pWy-tp-wSn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to note to see more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iu-Jj-OYK">
+                        <rect key="frame" x="20" y="50" width="402" height="14"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="6Iu-Jj-OYK" secondAttribute="bottom" constant="8" id="3q4-96-vMb"/>
+                    <constraint firstAttribute="trailing" secondItem="ENG-21-KI2" secondAttribute="trailing" constant="20" symbolic="YES" id="6H5-XZ-PKl"/>
+                    <constraint firstItem="ENG-21-KI2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="EDE-Bs-Pse"/>
+                    <constraint firstAttribute="trailing" secondItem="6Iu-Jj-OYK" secondAttribute="trailing" constant="20" symbolic="YES" id="Opx-LZ-WVd"/>
+                    <constraint firstItem="6Iu-Jj-OYK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="b8i-fq-emD"/>
+                    <constraint firstItem="ENG-21-KI2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="f4f-JW-Grh"/>
+                    <constraint firstItem="6Iu-Jj-OYK" firstAttribute="top" secondItem="ENG-21-KI2" secondAttribute="bottom" constant="8" symbolic="YES" id="g2z-rh-jaE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="NoteTitleLabel" destination="ENG-21-KI2" id="or8-rf-86e"/>
+            </connections>
+            <point key="canvasLocation" x="228.98550724637684" y="135.9375"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -8,22 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		D90F6D9E25CCA18200001686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6D9D25CCA18200001686 /* AppDelegate.swift */; };
-		D90F6DA025CCA18300001686 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6D9F25CCA18300001686 /* SceneDelegate.swift */; };
-		D90F6DA225CCA18300001686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DA125CCA18300001686 /* ViewController.swift */; };
+		D90F6DA225CCA18300001686 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DA125CCA18300001686 /* LoginViewController.swift */; };
 		D90F6DA525CCA18300001686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DA325CCA18300001686 /* Main.storyboard */; };
 		D90F6DA725CCA18300001686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DA625CCA18300001686 /* Assets.xcassets */; };
 		D90F6DAA25CCA18300001686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DA825CCA18300001686 /* LaunchScreen.storyboard */; };
+		D90F6DBF25CCA27100001686 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DBE25CCA27100001686 /* LoginView.swift */; };
+		D90F6DC225CCA71700001686 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DC125CCA71700001686 /* SignupViewController.swift */; };
+		D90F6DC525CCA74000001686 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DC425CCA74000001686 /* SignupView.swift */; };
+		D90F6DC825CCAA7F00001686 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DC725CCAA7F00001686 /* NotesViewController.swift */; };
+		D90F6DCB25CCAA8F00001686 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DCA25CCAA8F00001686 /* NotesView.swift */; };
+		D90F6DCF25CCAE8F00001686 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DCE25CCAE8F00001686 /* Note.swift */; };
+		D90F6DD325CCAF9400001686 /* NoteDescribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DD225CCAF9400001686 /* NoteDescribeViewController.swift */; };
+		D90F6DD625CCAFBE00001686 /* NoteDescribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DD525CCAFBE00001686 /* NoteDescribeView.swift */; };
+		D90F6DD925CCBC8A00001686 /* NoteMetaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DD825CCBC8A00001686 /* NoteMetaDataViewController.swift */; };
+		D90F6DDC25CCBCBD00001686 /* NoteMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DDB25CCBCBD00001686 /* NoteMetaDataView.swift */; };
+		D90F6DE625CCC27600001686 /* NoteCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F6DE425CCC27600001686 /* NoteCellTableViewCell.swift */; };
+		D90F6DE725CCC27600001686 /* NoteCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D90F6DE525CCC27600001686 /* NoteCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D90F6D9A25CCA18200001686 /* we note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "we note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90F6D9D25CCA18200001686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D90F6D9F25CCA18300001686 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D90F6DA125CCA18300001686 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D90F6DA125CCA18300001686 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D90F6DA425CCA18300001686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D90F6DA625CCA18300001686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90F6DA925CCA18300001686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90F6DAB25CCA18300001686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90F6DBE25CCA27100001686 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D90F6DC125CCA71700001686 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		D90F6DC425CCA74000001686 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		D90F6DC725CCAA7F00001686 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		D90F6DCA25CCAA8F00001686 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		D90F6DCE25CCAE8F00001686 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D90F6DD225CCAF9400001686 /* NoteDescribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDescribeViewController.swift; sourceTree = "<group>"; };
+		D90F6DD525CCAFBE00001686 /* NoteDescribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDescribeView.swift; sourceTree = "<group>"; };
+		D90F6DD825CCBC8A00001686 /* NoteMetaDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMetaDataViewController.swift; sourceTree = "<group>"; };
+		D90F6DDB25CCBCBD00001686 /* NoteMetaDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMetaDataView.swift; sourceTree = "<group>"; };
+		D90F6DE425CCC27600001686 /* NoteCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellTableViewCell.swift; sourceTree = "<group>"; };
+		D90F6DE525CCC27600001686 /* NoteCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +78,74 @@
 		D90F6D9C25CCA18200001686 /* we note */ = {
 			isa = PBXGroup;
 			children = (
-				D90F6D9D25CCA18200001686 /* AppDelegate.swift */,
-				D90F6D9F25CCA18300001686 /* SceneDelegate.swift */,
-				D90F6DA125CCA18300001686 /* ViewController.swift */,
-				D90F6DA325CCA18300001686 /* Main.storyboard */,
-				D90F6DA625CCA18300001686 /* Assets.xcassets */,
-				D90F6DA825CCA18300001686 /* LaunchScreen.storyboard */,
-				D90F6DAB25CCA18300001686 /* Info.plist */,
+				D90F6DB425CCA1D400001686 /* App Delegate */,
+				D90F6DCD25CCAE7C00001686 /* Models */,
+				D90F6DB625CCA1E000001686 /* Controllers */,
+				D90F6DB825CCA1EE00001686 /* Views */,
+				D90F6DBA25CCA1F700001686 /* Assets */,
 			);
 			path = "we note";
+			sourceTree = "<group>";
+		};
+		D90F6DB425CCA1D400001686 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6D9D25CCA18200001686 /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		D90F6DB625CCA1E000001686 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6DA125CCA18300001686 /* LoginViewController.swift */,
+				D90F6DBE25CCA27100001686 /* LoginView.swift */,
+				D90F6DC125CCA71700001686 /* SignupViewController.swift */,
+				D90F6DC425CCA74000001686 /* SignupView.swift */,
+				D90F6DC725CCAA7F00001686 /* NotesViewController.swift */,
+				D90F6DCA25CCAA8F00001686 /* NotesView.swift */,
+				D90F6DD225CCAF9400001686 /* NoteDescribeViewController.swift */,
+				D90F6DD525CCAFBE00001686 /* NoteDescribeView.swift */,
+				D90F6DD825CCBC8A00001686 /* NoteMetaDataViewController.swift */,
+				D90F6DDB25CCBCBD00001686 /* NoteMetaDataView.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D90F6DB825CCA1EE00001686 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6DA325CCA18300001686 /* Main.storyboard */,
+				D90F6DA825CCA18300001686 /* LaunchScreen.storyboard */,
+				D90F6DE325CCC25900001686 /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D90F6DBA25CCA1F700001686 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6DA625CCA18300001686 /* Assets.xcassets */,
+				D90F6DAB25CCA18300001686 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D90F6DCD25CCAE7C00001686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6DCE25CCAE8F00001686 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D90F6DE325CCC25900001686 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6DE425CCC27600001686 /* NoteCellTableViewCell.swift */,
+				D90F6DE525CCC27600001686 /* NoteCellTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +208,7 @@
 				D90F6DAA25CCA18300001686 /* LaunchScreen.storyboard in Resources */,
 				D90F6DA725CCA18300001686 /* Assets.xcassets in Resources */,
 				D90F6DA525CCA18300001686 /* Main.storyboard in Resources */,
+				D90F6DE725CCC27600001686 /* NoteCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +219,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D90F6DA225CCA18300001686 /* ViewController.swift in Sources */,
+				D90F6DCB25CCAA8F00001686 /* NotesView.swift in Sources */,
+				D90F6DBF25CCA27100001686 /* LoginView.swift in Sources */,
+				D90F6DE625CCC27600001686 /* NoteCellTableViewCell.swift in Sources */,
+				D90F6DA225CCA18300001686 /* LoginViewController.swift in Sources */,
+				D90F6DDC25CCBCBD00001686 /* NoteMetaDataView.swift in Sources */,
+				D90F6DD625CCAFBE00001686 /* NoteDescribeView.swift in Sources */,
+				D90F6DD325CCAF9400001686 /* NoteDescribeViewController.swift in Sources */,
+				D90F6DCF25CCAE8F00001686 /* Note.swift in Sources */,
+				D90F6DC825CCAA7F00001686 /* NotesViewController.swift in Sources */,
+				D90F6DC225CCA71700001686 /* SignupViewController.swift in Sources */,
+				D90F6DD925CCBC8A00001686 /* NoteMetaDataViewController.swift in Sources */,
 				D90F6D9E25CCA18200001686 /* AppDelegate.swift in Sources */,
-				D90F6DA025CCA18300001686 /* SceneDelegate.swift in Sources */,
+				D90F6DC525CCA74000001686 /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +379,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "we note/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/we note/Assets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +398,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "we note/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/we note/Assets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

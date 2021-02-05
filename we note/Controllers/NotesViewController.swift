@@ -45,6 +45,12 @@ class NotesViewController: UIViewController {
     // MARK:- TODO:- Method GettingNotes For Getting the Notes.
     func GettingNotes () {
         
+        /*
+            1) first Check all notes was written with auth user
+            2) Seconde check if he didn't write any note and show mess to Add Some Notes Please
+            3) if he have add to array and get more and more ....Etc.
+         */
+        
         FirebaseNetworking.readWithWhereCondtion(collectionName: "Notes", k: "UserNote", v: (Auth.auth().currentUser?.email!)!) { (snapshot) in
             if snapshot.isEmpty {
                 // if result is empty show Mess.
@@ -54,6 +60,26 @@ class NotesViewController: UIViewController {
             }
             else {
                 // Load All Notes
+                self.notesview.tableView.isHidden = false
+                self.notesview.LabelMess.isHidden = true
+                
+                for i in snapshot.documents {
+                    let ob = Note()
+                    
+                    ob.NoteID           = i.documentID
+                    ob.NoteTitle        = i.get("NoteTitle") as! String
+                    ob.NoteDetails      = i.get("NoteDesc")  as? String
+                    ob.NoteModifiedDate = i.get("dateModify") as! String
+                    ob.NoteCreatedDate  = i.get("dateCreated") as! String
+                    ob.long             = i.get("long") as! Double
+                    ob.lati             = i.get("lati") as! Double
+                    
+                    self.NotesArr.append(ob)
+                    self.notesview.tableView.reloadData()
+                    
+                }
+                RappleActivityIndicatorView.stopAnimation()
+                
             }
         }
         
@@ -61,6 +87,13 @@ class NotesViewController: UIViewController {
     
     // MARK:- TODO:- This Method For  Delete Note From Database.
     func DeleteMethod(rowNumber:Int) {
+        
+        FirebaseNetworking.DeleteDocumnt(collectionName: "Notes", documntId: NotesArr[rowNumber].NoteID) { (result) in
+            if result == "Success" {
+                self.NotesArr.remove(at: rowNumber)
+                self.notesview.tableView.reloadData()
+            }
+        }
         
     }
 }
@@ -136,10 +169,22 @@ extension NotesViewController: NewNote {
         notesview.tableView.isHidden = false
         notesview.LabelMess.isHidden = true
         
-        //let ob = Note()
-        //ob.NoteTitle = NoteTitle
-        
-        self.NotesArr.append(NoteData)
-        notesview.tableView.reloadData()
+        if NoteData.NoteCreatedDate == NoteData.NoteModifiedDate {
+            self.NotesArr.append(NoteData)
+            notesview.tableView.reloadData()
+        }
+        else {
+            print("F: \(NoteData.NoteID)")
+            for i in 0...(NotesArr.count - 1) {
+                if NoteData.NoteID == NotesArr[i].NoteID  {
+                    NotesArr.remove(at: i)
+                    notesview.tableView.reloadData()
+                    break
+                }
+            }
+            
+            self.NotesArr.append(NoteData)
+            notesview.tableView.reloadData()
+        }
     }
 }

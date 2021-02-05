@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import CoreLocation
 
 // MARK:- TODO:- This Protocol For Getting New Note Title or Updated.
 protocol NewNote {
@@ -24,6 +26,9 @@ class NoteDescribeViewController: UIViewController {
     var EditStatus = false
     var onece: Note!
     var delegate: NewNote!
+    let location = CLLocationManager()
+    var long = Double()
+    var lati = Double()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +42,14 @@ class NoteDescribeViewController: UIViewController {
             notedescribeview.ButtonSave.title = "Edit"
             notedescribeview.NoteTitle.text = onece.NoteTitle
             notedescribeview.NoteDescribtion.text = onece.NoteDetails
+            notedescribeview.ButtonMetaData.isHidden = false
         }
+        
+        // Open GPS And Get The Location
+        location.delegate = self
+        location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        location.requestWhenInUseAuthorization()
+        location.startUpdatingLocation()
     }
     
     // MARK:- TODO:- Make Save Button Action.
@@ -94,6 +106,46 @@ class NoteDescribeViewController: UIViewController {
     func UpdateNote() {
         // First Dismiss Keypad if it's Active
         self.view.endEditing(true)
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyyHH:mm:ss a"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        let result = formatter.string(from: date)
+        
+        var noteTitle = String()
+        
+        if notedescribeview.NoteTitle.text == "" {
+            noteTitle = "No Title"
+        }
+        else {
+            noteTitle = notedescribeview.NoteTitle.text!
+        }
+        
+        let data = [
+                        "NoteTitle": noteTitle,
+                        "NoteDesc": notedescribeview.NoteDescribtion.text!,
+                        "dateModify": result,
+                        "long": long,
+                        "lati": lati
+                   ] as [String:Any]
+        
+        FirebaseNetworking.updateDocumnt(collectionName: "Notes", documntId: onece.NoteID, data: data) { (res) in
+            if res == "Success" {
+                
+                let ob = Note()
+                ob.NoteID      = self.onece.NoteID
+                ob.NoteTitle   = noteTitle
+                ob.NoteCreatedDate = self.onece.NoteCreatedDate
+                ob.NoteDetails = self.notedescribeview.NoteDescribtion.text!
+                ob.NoteModifiedDate = result
+                ob.lati = self.lati
+                ob.long = self.long
+                self.delegate.NewNote(NoteData: ob)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     // MARK:- TODO:- func NewNote.
@@ -101,18 +153,42 @@ class NoteDescribeViewController: UIViewController {
         // First Dismiss Keypad if it's Active
         self.view.endEditing(true)
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyyHH:mm:ss a"
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
+        let result = formatter.string(from: date)
+        
+        var noteTitle = String()
+        
+        if notedescribeview.NoteTitle.text == "" {
+            noteTitle = "No Title"
+        }
+        else {
+            noteTitle = notedescribeview.NoteTitle.text!
+        }
+        
         let data = [
-                    "NoteTitle": notedescribeview.NoteTitle.text!,
+                    "NoteTitle": noteTitle,
                     "NoteDesc": notedescribeview.NoteDescribtion.text!,
-                    "dateCreated": "2020/05/15",
-                    "dateModify": "2020/05/15",
-                    "long": 31.51447889,
-                    "lati": 32.514778889
+                    "dateCreated": result,
+                    "dateModify": result,
+                    "long": long,
+                    "lati": lati,
+                    "UserNote": (Auth.auth().currentUser?.email!)!
                    ] as [String : Any] 
         
         FirebaseNetworking.addData(collectionName: "Notes", data: data) { (res) in
             if res == "Success" {
-                //self.delegate.NewNote(NoteTitle: self.notedescribeview.NoteTitle.text!)
+                let ob = Note()
+                ob.NoteTitle   = noteTitle
+                ob.NoteDetails = self.notedescribeview.NoteDescribtion.text!
+                ob.NoteCreatedDate  = result
+                ob.NoteModifiedDate = result
+                ob.lati = self.lati
+                ob.long = self.long
+                self.delegate.NewNote(NoteData: ob)
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -132,4 +208,31 @@ extension NoteDescribeViewController: UITextFieldDelegate {
         notedescribeview.NoteDescribtion.becomeFirstResponder()
         return true
     }
+}
+
+// MARK:- TODO:- This Extension For Getting Handle GPS Getting Location
+extension NoteDescribeViewController: CLLocationManagerDelegate {
+    
+    // TODO: These Methods For GPS.
+    //Write the didUpdateLocations method here:
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let l = locations[locations.count - 1]
+        if l.horizontalAccuracy > 0 {
+            location.stopUpdatingLocation()
+            location.delegate = nil
+            
+            // print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
+            
+            long = (l.coordinate.longitude)
+            lati = (l.coordinate.latitude)
+            
+        }
+    }
+    
+    
+    //Write the didFailWithError method here:
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
 }

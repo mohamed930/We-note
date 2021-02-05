@@ -87,7 +87,7 @@ class FirebaseNetworking {
     }
     
     // MARK:- TODO:- This Method For Update Data from Firebase.
-    public static func updateDocumnt (collectionName:String,documntId:String,data:[String:Any]) {
+    public static func updateDocumnt (collectionName:String,documntId:String,data:[String:Any],complention: @escaping (String) -> ()) {
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait", attributes: RappleModernAttributes)
         
@@ -96,17 +96,19 @@ class FirebaseNetworking {
             if error != nil {
                 RappleActivityIndicatorView.stopAnimation()
                 ProgressHUD.showError("Your Data isn't updated Successfully!")
+                complention("Failure")
             }
             else {
                 RappleActivityIndicatorView.stopAnimation()
                 ProgressHUD.showSuccess("Your Data is updated Successfully!")
+                complention("Success")
             }
         }
         
     }
     
     // MARK:- TODO:- This Method For Update Data from Firebase.
-    public static func DeleteDocumnt (collectionName:String,documntId:String) {
+    public static func DeleteDocumnt (collectionName:String,documntId:String,complention: @escaping (String) -> ()) {
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait", attributes: RappleModernAttributes)
         
@@ -115,10 +117,12 @@ class FirebaseNetworking {
             if error != nil {
                 RappleActivityIndicatorView.stopAnimation()
                 ProgressHUD.showError("Your Data isn't deleted Successfully!")
+                complention("Failure")
             }
             else {
                 RappleActivityIndicatorView.stopAnimation()
                 ProgressHUD.showSuccess("Your Data is deleted Successfully!")
+                complention("Success")
             }
         }
         

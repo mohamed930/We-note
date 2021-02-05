@@ -8,6 +8,7 @@
 import Foundation
 
 class Note {
+    var NoteID = String()
     var NoteTitle = String()
     var NoteDetails: String?
     var NoteCreatedDate = String()
